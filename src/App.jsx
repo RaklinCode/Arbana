@@ -306,7 +306,7 @@ export default function App() {
             {/* The Headline - Using a Serif font for "Old Money" feel */}
             <h1 className="text-4xl md:text-7xl font-bold text-cream mb-8 leading-tight tracking-tight font-serif">
               Arbana Security<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-[#E5D5B5]">Traditë Besë Siguri</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-[#E5D5B5]">Traditë Integritet Siguri</span>
             </h1>
 
             <p className="text-xl text-cream/70 mb-10 max-w-2xl mx-auto leading-relaxed font-light">
