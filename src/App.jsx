@@ -138,8 +138,8 @@ const translations = {
       desc: 'Comprehensive security protocols designed to mitigate risk and ensure business continuity.',
       items: [
         {
-          title: "CCTV Systems, GPS & Monitoring",
-          description: "24/7 monitoring from our operational center in Tirana using the latest technology.",
+          title: "Rapid Response",
+          description: "Our elite service. 24/7 alarm monitoring and immediate armed response in the event of a threat.",
         },
         {
           title: "Manned Guarding",
