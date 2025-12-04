@@ -20,7 +20,7 @@ const translations = {
       servicesBtn: 'Shërbimet Tona'
     },
     stats: [
-      { number: "20+", label: "Vite Eksperiencë" },
+      { number: "30", label: "Vite Eksperiencë" },
       { number: "50+", label: "Oficerë Sigurie" },
       { number: "24/7", label: "Monitorim Aktiv" },
       { number: "100%", label: "Staf i Licencuar" }
@@ -53,7 +53,7 @@ const translations = {
       desc: "Arbana Security (Arbana Sh.a) është themeluar me një mision të qartë: Të sjellë standardin ndërkombëtar të sigurisë në tregun shqiptar.",
       content: [
         "Ndryshe nga kompanitë tradicionale, ne nuk ofrojmë thjesht 'roje', por zgjidhje të integruara sigurie. Duke kombinuar forcën njerëzore të trajnuar sipas Ligjit 75/2014 me teknologjinë më të fundit të monitorimit, ne garantojmë qetësi absolute për bizneset dhe familjet në Tiranë.",
-        "Si një Shoqëri Anonime (Sh.a), Arbana ofron garanci financiare, transparencë dhe stabilitet që pak kompani në treg mund ta ofrojnë."
+        "Arbana Sh.a ofron garanci financiare, transparencë dhe stabilitet që pak kompani në treg mund ta ofrojnë."
       ]
     },
     whyUs: {
@@ -61,8 +61,8 @@ const translations = {
       desc: 'Në një botë të paparashikueshme, ju duhet një partner që parashikon kërcënimet para se ato të ndodhin. Standardet tona rigoroze të trajnimit dhe qasja teknologjike na bëjnë të dallojmë nga të tjerët.',
       items: [
         { title: 'Verifikim Rigoroz', desc: 'Çdo oficer i nënshtrohet kontrolleve të thella të sfondit dhe vlerësimeve psikologjike.' },
-        { title: 'Reagim i Shpejtë (Rapid Response)', desc: 'Qendra jonë operative punon 24/7/365 për të dislokuar patrulla në moment.' },
-        { title: 'Strategji e Personalizuar', desc: 'Ne nuk ofrojmë zgjidhje gjenerike. Ne vlerësojmë pikat tuaja të dobëta.' }
+        { title: 'Reagim i Shpejtë ', desc: 'Qendra jonë operative punon 24/7/365 për të nisur patrullën në moment.' },
+        { title: 'Strategji e Personalizuar', desc: 'Plani ynë i sigurisë hartohet posaçërisht për të mbuluar çdo nevojë tuajën.' }
       ],
       industryStandards: 'Standardet Tona',
       certifications: [
@@ -310,7 +310,7 @@ export default function App() {
             </h1>
 
             <p className="text-xl text-cream/70 mb-10 max-w-2xl mx-auto leading-relaxed font-light">
-              Për 20 vite, ne kemi mbrojtur asetet më të rëndësishme të Tiranës. Siguri private për ata që kërkojnë diskrecion dhe përsosmëri.
+              Për 30 vite, ne kemi mbrojtur asetet më të rëndësishme të Tiranës. Siguri private për ata që kërkojnë diskrecion dhe përsosmëri.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
