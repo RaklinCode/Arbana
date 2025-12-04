@@ -30,20 +30,20 @@ const translations = {
       desc: 'Protokolle sigurie gjithëpërfshirëse të dizajnuara për të eliminuar rrezikun dhe për të garantuar vazhdimësinë e biznesit.',
       items: [
         {
-          title: "Ruajtje Fizike (Roje)",
-          description: "Personel i trajnuar dhe i licencuar për sigurinë e objekteve tregtare, bankave dhe rezidencave private.",
+          title: "Grupi i Gatshëm",
+          description: "Shërbimi ynë elitar. Monitorim 24/7 i alarmit dhe reagim i menjëhershëm me patrullë të armatosur në rast rreziku.",
         },
         {
-          title: "Siguri Personale (VIP)",
-          description: "Mbrojtje diskrete dhe profesionale për VIP-a, ekzekutivë dhe individë të profilit të lartë.",
+          title: "Roje Fizike",
+          description: "Oficerë sigurie statikë për rezidenca, zyra dhe objekte industriale. Të trajnuar dhe të verifikuar.",
         },
         {
-          title: "Sisteme Kamerash, GPS & Monitorim",
-          description: "Monitorim 24/7 nga qendra jonë operacionale në Tiranë duke përdorur teknologjinë më të fundit.",
+          title: "Mbrojtje e Afërt (VIP)",
+          description: "Shoqërim ekzekutiv me automjete luksoze dhe agjentë të certifikuar për mbrojtje fizike diskrete.",
         },
         {
           title: "Siguria e Eventeve",
-          description: "Menaxhim i turmave dhe kontroll i hyrjeve për koncerte, ndeshje dhe evente korporative.",
+          description: "Menaxhim turmash dhe protokolle sigurie për koncerte, dasma VIP dhe evente korporative.",
         }
       ],
       learnMore: 'Mëso më shumë'
@@ -138,16 +138,16 @@ const translations = {
       desc: 'Comprehensive security protocols designed to mitigate risk and ensure business continuity.',
       items: [
         {
+          title: "CCTV Systems, GPS & Monitoring",
+          description: "24/7 monitoring from our operational center in Tirana using the latest technology.",
+        },
+        {
           title: "Manned Guarding",
           description: "Trained and licensed personnel for the security of commercial properties, banks, and private residences.",
         },
         {
           title: "Close Protection (VIP)",
           description: "Discreet and professional protection for VIPs, executives, and high-profile individuals.",
-        },
-        {
-          title: "CCTV Systems, GPS & Monitoring",
-          description: "24/7 monitoring from our operational center in Tirana using the latest technology.",
         },
         {
           title: "Event Security",
@@ -239,9 +239,9 @@ export default function App() {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const servicesIcons = [
+    <Eye className="w-8 h-8 text-gold" />,
     <Users className="w-8 h-8 text-gold" />,
     <Shield className="w-8 h-8 text-gold" />,
-    <Eye className="w-8 h-8 text-gold" />,
     <Lock className="w-8 h-8 text-gold" />
   ];
 
