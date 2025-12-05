@@ -13,9 +13,9 @@ const translations = {
     },
     hero: {
       badge: 'Lider në Sigurinë Private në Shqipëri',
-      title: 'Siguri Absolute.',
-      subtitle: 'Mbrojtje pa Kompromis.',
-      desc: 'Ne ofrojmë zgjidhje elitare sigurie të përshtatura për rreziqet tuaja. Nga ruajtja fizike tek mbikëqyrja e avancuar, ne mbrojmë atë që ka rëndësi për ju.',
+      title: 'Arbana Security',
+      subtitle: 'Traditë Garanci Siguri',
+      desc: 'Për 30 vite, ne kemi mbrojtur asetet më të rëndësishme të Tiranës. Siguri private për ata që kërkojnë seriozitet dhe përsosmëri.',
       contactBtn: 'Na Kontaktoni',
       servicesBtn: 'Shërbimet Tona'
     },
@@ -76,7 +76,7 @@ const translations = {
       title: 'Na Kontaktoni',
       desc: 'Kontaktoni selinë tonë në Tiranë për një vlerësim konfidencial të riskut. Specialistët tanë janë gati t\'ju ndihmojnë.',
       phone: { title: 'Telefon ', subtitle: '' },
-      email: { title: 'Email', subtitle: 'Përgjigje brenda 2 orëve' },
+      email: { title: 'Email', subtitle: '' },
       address: { title: 'Zyra Qendrore', subtitle: 'Tiranë, Shqipëri' },
       form: {
         title: 'Kërkoni Ofertë Falas',
@@ -121,9 +121,9 @@ const translations = {
     },
     hero: {
       badge: 'Leading Private Security in Albania',
-      title: 'Absolute Security.',
-      subtitle: 'Uncompromised Protection.',
-      desc: 'We provide elite security solutions tailored to your risks. From physical guarding to advanced surveillance, we protect what matters to you.',
+      title: 'Arbana Security',
+      subtitle: 'Tradition Guarantee Security',
+      desc: 'For 30 years, we have protected Tirana\'s most important assets. Private security for those seeking seriousness and excellence.',
       contactBtn: 'Contact Us',
       servicesBtn: 'Our Services'
     },
@@ -184,7 +184,7 @@ const translations = {
       title: 'Contact Us',
       desc: 'Contact our headquarters in Tirana for a confidential risk assessment. Our specialists are ready to help you.',
       phone: { title: 'Phone 24/7', subtitle: 'Available for emergencies' },
-      email: { title: 'Email', subtitle: 'Response within 2 hours' },
+      email: { title: 'Email', subtitle: '' },
       address: { title: 'Headquarters', subtitle: 'Tirana, Albania' },
       form: {
         title: 'Request Free Quote',
@@ -305,23 +305,23 @@ export default function App() {
 
             {/* The Headline - Using a Serif font for "Old Money" feel */}
             <h1 className="text-4xl md:text-7xl font-bold text-cream mb-8 leading-tight tracking-tight font-serif">
-              Arbana Security<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-[#E5D5B5]">Traditë Integritet Siguri</span>
+              {t.hero.title}<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-[#E5D5B5]">{t.hero.subtitle}</span>
             </h1>
 
             <p className="text-xl text-cream/70 mb-10 max-w-2xl mx-auto leading-relaxed font-light">
-              Për 30 vite, ne kemi mbrojtur asetet më të rëndësishme të Tiranës. Siguri private për ata që kërkojnë diskrecion dhe përsosmëri.
+              {t.hero.desc}
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               {/* Primary Button - Gold */}
               <a href="#contact" className="w-full sm:w-auto px-8 py-4 bg-gold hover:bg-[#B09265] text-deep-green rounded-sm font-bold text-lg transition-all shadow-lg hover:-translate-y-1">
-                Na Kontaktoni
+                {t.hero.contactBtn}
               </a>
 
               {/* Secondary Button - Border Only */}
               <a href="#services" className="w-full sm:w-auto px-8 py-4 bg-transparent border border-cream/20 hover:border-gold text-cream rounded-sm font-bold text-lg transition-all hover:bg-cream/5">
-                Shërbimet Tona
+                {t.hero.servicesBtn}
               </a>
             </div>
           </div>
@@ -481,7 +481,7 @@ export default function App() {
       {/* Footer */}
       <footer className="bg-deep-green text-cream/80 py-16 border-t border-cream/10">
         <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-12 mb-12">
+          <div className="grid md:grid-cols-2 gap-12 mb-12">
             <div>
               <div className="flex items-center gap-2 mb-6">
                 <Shield className="w-6 h-6 text-gold" />
@@ -502,15 +502,7 @@ export default function App() {
               </ul>
             </div>
 
-            <div>
-              <h4 className="text-cream font-bold mb-6 text-lg">{t.footer.company}</h4>
-              <ul className="space-y-4">
-                <li><a href="#" className="hover:text-gold transition-colors">{t.nav.about}</a></li>
-                <li><a href="#" className="hover:text-gold transition-colors">Karriera</a></li>
-                <li><a href="#" className="hover:text-gold transition-colors">Certifikimet</a></li>
-                <li><a href="#" className="hover:text-gold transition-colors">Politika e Privatësisë</a></li>
-              </ul>
-            </div>
+
 
 
           </div>
