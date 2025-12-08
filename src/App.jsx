@@ -21,7 +21,7 @@ const translations = {
     },
     stats: [
       { number: "30", label: "Vite Eksperiencë" },
-      { number: "50+", label: "Oficerë Sigurie" },
+      { number: "200+", label: "Oficerë Sigurie" },
       { number: "24/7", label: "Monitorim Aktiv" },
       { number: "100%", label: "Staf i Licencuar" }
     ],
