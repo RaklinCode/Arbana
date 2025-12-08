@@ -249,7 +249,7 @@ export default function App() {
     <div className="font-sans text-deep-green bg-cream min-h-screen selection:bg-gold selection:text-deep-green">
 
       {/* Navigation */}
-      <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-deep-green/95 backdrop-blur-sm shadow-lg py-4' : 'bg-transparent py-6'}`}>
+      <nav className={`absolute w-full z-50 transition-all duration-300 ${scrolled ? 'bg-deep-green/95 backdrop-blur-sm shadow-lg py-4' : 'bg-transparent py-6'}`}>
         <div className="w-full pr-6 pl-2 flex justify-between items-center">
           <div className="flex items-center gap-0">
             <img src="/arbana_logo.png" alt="Arbana Security" className="h-20 md:h-28 w-auto object-contain margin-right-0 padding-right-0 margin-left-0 padding-left-0" />
