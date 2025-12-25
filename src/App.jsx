@@ -226,6 +226,30 @@ export default function App() {
   const [scrolled, setScrolled] = useState(false);
   const [lang, setLang] = useState('al'); // 'al' or 'en'
 
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    service: '',
+    message: ''
+  });
+  const [formStatus, setFormStatus] = useState('idle'); // idle, submitting, success
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setFormStatus('submitting');
+    // Simulate API call
+    setTimeout(() => {
+      setFormStatus('success');
+      setFormData({ name: '', phone: '', email: '', service: '', message: '' });
+    }, 1500);
+  };
+
   const t = translations[lang];
 
   useEffect(() => {
@@ -447,32 +471,105 @@ export default function App() {
       {/* Contact Section */}
       <section id="contact" className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-deep-green mb-6">{t.contact.title}</h2>
-            <p className="text-deep-green/80 mb-10 text-lg">
-              {t.contact.desc}
-            </p>
-
-            <div className="grid md:grid-cols-2 gap-8 mt-12">
-              <div className="flex flex-col items-center p-6 bg-cream rounded-xl hover:shadow-lg transition-shadow">
-                <div className="bg-cream p-4 rounded-full text-gold mb-4 border border-gold/20">
-                  <Phone size={32} />
-                </div>
-                <h4 className="font-bold text-deep-green text-lg mb-2">{t.contact.phone.title}</h4>
-                <p className="text-deep-green/80 font-medium text-lg">+355 69 472 0831</p>
-                <p className="text-deep-green/60 text-sm mt-1">{t.contact.phone.subtitle}</p>
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-deep-green mb-6">{t.contact.title}</h2>
+              <div className="flex items-center justify-center gap-2 text-gold font-medium">
+                <Mail size={20} />
+                <a href="mailto:arbana.sha@outlook.com" className="hover:underline text-lg">arbana.sha@outlook.com</a>
               </div>
+            </div>
 
-              <div className="flex flex-col items-center p-6 bg-cream rounded-xl hover:shadow-lg transition-shadow">
-                <div className="bg-cream p-4 rounded-full text-gold mb-4 border border-gold/20">
-                  <Mail size={32} />
+            <div className="bg-cream p-8 md:p-12 rounded-xl shadow-lg border border-gold/20">
+              {formStatus === 'success' ? (
+                <div className="text-center py-12">
+                  <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <CheckCircle className="w-10 h-10 text-green-600" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-deep-green mb-3">{t.contact.form.successTitle}</h3>
+                  <p className="text-deep-green/70">{t.contact.form.successDesc}</p>
+                  <button onClick={() => setFormStatus('idle')} className="mt-8 text-gold font-semibold hover:underline">
+                    {lang === 'al' ? 'Dërgo një mesazh tjetër' : 'Send another message'}
+                  </button>
                 </div>
-                <h4 className="font-bold text-deep-green text-lg mb-2">{t.contact.email.title}</h4>
-                <p className="text-deep-green/80 font-medium text-lg">arbana.sha@outlook.comm</p>
-                <p className="text-deep-green/60 text-sm mt-1">{t.contact.email.subtitle}</p>
-              </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm font-semibold text-deep-green mb-2">{t.contact.form.name}</label>
+                      <input
+                        type="text"
+                        name="name"
+                        required
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        className="w-full px-4 py-3 rounded-lg border border-deep-green/10 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-all bg-white"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-semibold text-deep-green mb-2">{t.contact.form.phone}</label>
+                      <input
+                        type="tel"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleInputChange}
+                        className="w-full px-4 py-3 rounded-lg border border-deep-green/10 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-all bg-white"
+                      />
+                    </div>
+                  </div>
 
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm font-semibold text-deep-green mb-2">{t.contact.form.email}</label>
+                      <input
+                        type="email"
+                        name="email"
+                        required
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        className="w-full px-4 py-3 rounded-lg border border-deep-green/10 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-all bg-white"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-semibold text-deep-green mb-2">{t.contact.form.service}</label>
+                      <select
+                        name="service"
+                        value={formData.service}
+                        onChange={handleInputChange}
+                        className="w-full px-4 py-3 rounded-lg border border-deep-green/10 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-all bg-white appearance-none"
+                      >
+                        <option value="">{t.contact.form.service}</option>
+                        {t.contact.servicesOptions.map((opt, i) => (
+                          <option key={i} value={opt}>{opt}</option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
 
+                  <div>
+                    <label className="block text-sm font-semibold text-deep-green mb-2">{t.contact.form.message}</label>
+                    <textarea
+                      name="message"
+                      rows="4"
+                      required
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 rounded-lg border border-deep-green/10 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-all bg-white resize-none"
+                    ></textarea>
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={formStatus === 'submitting'}
+                    className="w-full md:w-auto px-8 py-4 bg-gold hover:bg-[#B09265] text-deep-green font-bold text-lg rounded-sm transition-all shadow-lg hover:-translate-y-1 disabled:opacity-70 disabled:cursor-not-allowed mx-auto block"
+                  >
+                    {formStatus === 'submitting' ? t.contact.form.submitting : t.contact.form.submit}
+                  </button>
+                  <p className="text-center text-xs text-deep-green/40 mt-4">
+                    {t.contact.form.privacy}
+                  </p>
+                </form>
+              )}
             </div>
           </div>
         </div>
