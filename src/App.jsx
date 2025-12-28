@@ -128,7 +128,7 @@ const translations = {
       servicesBtn: 'Our Services'
     },
     stats: [
-      { number: "10+", label: "Years Experience" },
+      { number: "30+", label: "Years Experience" },
       { number: "200+", label: "Security Officers" },
       { number: "24/7", label: "Active Monitoring" },
       { number: "100%", label: "Licensed Staff" }
